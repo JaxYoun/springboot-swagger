@@ -1,10 +1,13 @@
-package com.yang.springbootswagger.rest;
+package com.springbootswagger.rest;
 
-import com.yang.springbootswagger.domain.User;
+import com.springbootswagger.domain.User;
 import io.swagger.annotations.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Api
+@Api(value = "用户管理接口", tags = "by YangJx")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -15,7 +18,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/getUser")
-    @ApiOperation(value = "根据id查询用户信息", notes = "查询数据库中某个的用户信息")
+    @ApiOperation(value = "根据id查询用户信息", notes = "注意：查询数据库中某个的用户信息")
     @ApiImplicitParams(value = {
             @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long"),
             @ApiImplicitParam(name = "name", value = "用户姓名", required = true, dataType = "String")
@@ -35,8 +38,8 @@ public class UserController {
      * @return
      */
     @PostMapping("/getUserBy")
-    @ApiOperation(value = "条件查询用户", notes = "根据条件查询用户信息")
-    public User getUserBy(@RequestBody @ApiParam(value = "用户", name = "user", required = true) User user) {
+    @ApiOperation(value = "条件查询用户", notes = "注意：根据条件查询用户信息", httpMethod = "POST")
+    public User getUserBy(@RequestBody User user) {
         User user1 = new User();
         user1.setId(user.getId());
         user1.setName(user.getName());

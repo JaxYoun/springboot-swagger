@@ -1,4 +1,4 @@
-package com.yang.springbootswagger.domain;
+package com.springbootswagger.domain;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
