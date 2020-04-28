@@ -6,3 +6,5 @@
 ## 在配置类Swagger2Config中添加配置项
 ## 在controller类及其方法上添加注解
 ## 在DTO和VO类上添加注解
+
+## version-1
