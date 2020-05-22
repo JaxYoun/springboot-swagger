@@ -7,4 +7,4 @@
 ## 在controller类及其方法上添加注解
 ## 在DTO和VO类上添加注解
 
-## version-1.5
+## version-1.6
